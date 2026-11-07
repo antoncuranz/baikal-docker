@@ -19,6 +19,7 @@ RUN curl -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
   echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list &&\
   apt remove -y lsb-release   &&\
   apt update                  &&\
+  apt-get install -y --only-upgrade libbrotli1 &&\
   apt install -y            \
   php8.5-curl               \
   php8.5-fpm                \
